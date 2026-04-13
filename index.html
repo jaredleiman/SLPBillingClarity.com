@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLPBillingClarity | Medicare Billing Intelligence for Speech-Language Pathologists</title>
+  <meta name="description" content="Monthly Medicare billing compliance intelligence for independent speech-language pathologists. CPT codes, modifier requirements, telehealth rules, OIG audit alerts — delivered to your inbox every month." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1B3A6B;
+      --navy-dark: #132B52;
+      --gold: #E8A020;
+      --gold-light: #FFF8E1;
+      --cream: #F5F5F0;
+      --cream-dark: #ECEAE2;
+      --text: #1A1A2E;
+      --text-muted: #4A4A65;
+      --white: #FFFFFF;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+    /* ── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(27, 58, 107, 0.97);
+      backdrop-filter: blur(12px);
+      padding: 0 40px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700; color: var(--white);
+      text-decoration: none;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--navy-dark);
+      padding: 10px 24px; border-radius: 6px;
+      font-weight: 700; font-size: 14px;
+      text-decoration: none; letter-spacing: 0.3px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #d4900e; }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 92vh;
+      margin-top: 64px;
+    }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .hero-image::after {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 160px;
+      background: linear-gradient(to right, transparent, var(--navy));
+    }
+    .hero-content {
+      background: var(--navy);
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 60px 64px 60px 40px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232,160,32,0.15);
+      color: var(--gold);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 4px;
+      margin-bottom: 24px;
+      width: fit-content;
+    }
+    .hero h1 {
+      font-size: 46px; line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 18px; color: rgba(255,255,255,0.72);
+      line-height: 1.7; margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold); color: var(--navy-dark);
+      padding: 16px 40px; border-radius: 8px;
+      font-weight: 700; font-size: 16px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+      width: fit-content;
+    }
+    .hero-cta:hover { background: #d4900e; transform: translateY(-2px); }
+    .hero-price {
+      margin-top: 16px;
+      font-size: 14px; color: rgba(255,255,255,0.5);
+    }
+
+    /* ── SPLIT SECTIONS ──────────────────────────────────────── */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+    }
+    .split-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .split-content {
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 60px 64px;
+    }
+    .split-content h2 {
+      font-size: 34px; line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--navy);
+    }
+    .split-content p {
+      font-size: 16px; color: var(--text-muted);
+      line-height: 1.7; margin-bottom: 16px;
+      max-width: 500px;
+    }
+
+    /* ── COVERAGE GRID ───────────────────────────────────────── */
+    .coverage {
+      background: var(--white);
+      padding: 80px 64px;
+    }
+    .section-label {
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .coverage h2 {
+      font-size: 36px; color: var(--navy);
+      margin-bottom: 48px;
+    }
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+    }
+    .coverage-card {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 32px 28px;
+      border: 1px solid var(--cream-dark);
+    }
+    .coverage-icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+    .coverage-card h3 {
+      font-size: 18px; color: var(--navy);
+      margin-bottom: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+    }
+    .coverage-card p {
+      font-size: 14px; color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── CPT CODE TABLE ──────────────────────────────────────── */
+    .cpt-section {
+      background: var(--navy);
+      padding: 80px 64px;
+      color: var(--white);
+    }
+    .cpt-section .section-label { color: var(--gold); }
+    .cpt-section h2 {
+      font-size: 36px; color: var(--white);
+      margin-bottom: 16px;
+    }
+    .cpt-section > p {
+      font-size: 16px; color: rgba(255,255,255,0.65);
+      margin-bottom: 40px; max-width: 700px;
+    }
+    .cpt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      max-width: 1100px;
+    }
+    .cpt-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 20px 24px;
+    }
+    .cpt-code {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px; font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .cpt-desc {
+      font-size: 13px; color: rgba(255,255,255,0.7);
+      line-height: 1.5; margin-bottom: 10px;
+    }
+    .cpt-risk {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 4px;
+      display: inline-block;
+    }
+    .risk-high { background: rgba(220,53,69,0.2); color: #ff6b6b; }
+    .risk-elevated { background: rgba(232,160,32,0.2); color: #E8A020; }
+    .risk-moderate { background: rgba(40,167,69,0.2); color: #51cf66; }
+
+    /* ── HOW IT WORKS ────────────────────────────────────────── */
+    .how-it-works {
+      background: var(--white);
+      padding: 80px 64px;
+    }
+    .how-it-works h2 {
+      font-size: 36px; color: var(--navy);
+      margin-bottom: 48px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+    }
+    .step {
+      text-align: center;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--navy);
+      color: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 700;
+      margin: 0 auto 20px;
+    }
+    .step h3 {
+      font-size: 16px; color: var(--navy);
+      margin-bottom: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+    }
+    .step p {
+      font-size: 14px; color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── CARRIER STRIP ───────────────────────────────────────── */
+    .carriers {
+      background: var(--navy);
+      padding: 48px 64px;
+      text-align: center;
+    }
+    .carriers .section-label { color: var(--gold); margin-bottom: 24px; }
+    .carrier-pills {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 12px;
+    }
+    .carrier-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.85);
+      padding: 10px 22px; border-radius: 6px;
+      font-size: 14px; font-weight: 600;
+    }
+    .carrier-pill.gold {
+      background: rgba(232,160,32,0.15);
+      border-color: rgba(232,160,32,0.3);
+      color: var(--gold);
+    }
+
+    /* ── PRICING ─────────────────────────────────────────────── */
+    .pricing {
+      background: var(--cream);
+      padding: 80px 64px;
+      text-align: center;
+    }
+    .pricing h2 {
+      font-size: 36px; color: var(--navy);
+      margin-bottom: 48px;
+    }
+    .price-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--cream-dark);
+    }
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px; font-weight: 800;
+      color: var(--navy);
+    }
+    .price-amount span { font-size: 20px; font-weight: 600; color: var(--text-muted); }
+    .price-desc {
+      font-size: 15px; color: var(--text-muted);
+      margin: 12px 0 28px; line-height: 1.6;
+    }
+    .price-features {
+      list-style: none; text-align: left;
+      margin-bottom: 32px;
+    }
+    .price-features li {
+      padding: 10px 0;
+      font-size: 15px; color: var(--text);
+      border-bottom: 1px solid var(--cream);
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .price-features li::before {
+      content: '✓';
+      color: var(--gold); font-weight: 700;
+      flex-shrink: 0;
+    }
+    .price-cta {
+      display: block;
+      background: var(--gold); color: var(--navy-dark);
+      padding: 16px 40px; border-radius: 8px;
+      font-weight: 700; font-size: 16px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .price-cta:hover { background: #d4900e; transform: translateY(-2px); }
+
+    /* ── TESTIMONIALS ────────────────────────────────────────── */
+    .testimonials {
+      background: var(--white);
+      padding: 80px 64px;
+    }
+    .testimonials h2 {
+      font-size: 36px; color: var(--navy);
+      margin-bottom: 48px;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+    }
+    .testimonial {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 32px 28px;
+      border: 1px solid var(--cream-dark);
+    }
+    .testimonial blockquote {
+      font-size: 15px; color: var(--text);
+      line-height: 1.7; margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonial cite {
+      font-style: normal;
+      font-size: 13px; font-weight: 600;
+      color: var(--navy);
+      display: block;
+    }
+    .testimonial cite span {
+      font-weight: 400; color: var(--text-muted);
+    }
+
+    /* ── FAQ ──────────────────────────────────────────────────── */
+    .faq {
+      background: var(--cream);
+      padding: 80px 64px;
+    }
+    .faq h2 {
+      font-size: 36px; color: var(--navy);
+      margin-bottom: 48px;
+    }
+    .faq-list {
+      max-width: 760px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 24px 0;
+    }
+    .faq-q {
+      font-size: 17px; font-weight: 700;
+      color: var(--navy); cursor: pointer;
+      display: flex; justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after {
+      content: '+'; font-size: 24px; font-weight: 400;
+      color: var(--gold); transition: transform 0.2s;
+    }
+    .faq-item.open .faq-q::after { content: '−'; }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px; padding-top: 16px;
+    }
+    .faq-a p {
+      font-size: 15px; color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── FINAL CTA ───────────────────────────────────────────── */
+    .final-cta {
+      background: var(--navy);
+      padding: 80px 64px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: 36px; color: var(--white);
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      font-size: 17px; color: rgba(255,255,255,0.65);
+      margin-bottom: 36px; max-width: 560px;
+      margin-left: auto; margin-right: auto;
+      line-height: 1.7;
+    }
+    .final-cta a {
+      display: inline-block;
+      background: var(--gold); color: var(--navy-dark);
+      padding: 16px 48px; border-radius: 8px;
+      font-weight: 700; font-size: 16px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .final-cta a:hover { background: #d4900e; transform: translateY(-2px); }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: var(--navy-dark);
+      padding: 40px 64px;
+      text-align: center;
+    }
+    footer p {
+      font-size: 13px; color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+    }
+    footer a { color: rgba(255,255,255,0.6); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero, .split { grid-template-columns: 1fr; }
+      .hero-image { max-height: 340px; }
+      .hero-image::after { display: none; }
+      .hero-content { padding: 40px 28px; }
+      .hero h1 { font-size: 32px; }
+      .split-content { padding: 40px 28px; }
+      .coverage, .cpt-section, .how-it-works, .carriers,
+      .pricing, .testimonials, .faq, .final-cta, footer {
+        padding-left: 28px; padding-right: 28px;
+      }
+      .coverage-grid, .testimonial-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .cpt-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .steps { grid-template-columns: 1fr; }
+      .cpt-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 20px; }
+      .nav-brand { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-brand">SLP<span>Billing</span>Clarity</a>
+  <a href="STRIPE_LINK_HERE" class="nav-cta">Subscribe — $197/mo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80" alt="Speech-language pathologist conducting therapy session with patient in clinical setting" />
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Medicare Compliance Intelligence for SLPs</div>
+    <h1>Stop guessing.<br/>Start billing <em>correctly.</em></h1>
+    <p class="hero-sub">Monthly Medicare billing compliance intelligence built specifically for independent speech-language pathologists. CPT code updates, modifier requirements, OIG audit alerts, and telehealth rule changes — delivered to your inbox on the 1st of every month.</p>
+    <a href="STRIPE_LINK_HERE" class="hero-cta">Get Your First Report →</a>
+    <p class="hero-price">$197/month · Cancel anytime · First report within 24 hours</p>
+  </div>
+</section>
+
+<!-- SPLIT 1 — WHY NOW -->
+<section class="split">
+  <div class="split-content" style="background: var(--white);">
+    <p class="section-label">Why This Matters Now</p>
+    <h2>CMS just changed the rules on "qualified SLP" — and most practices missed it.</h2>
+    <p>In mid-2025, CMS issued a surprise ruling reversing its longstanding interpretation of who qualifies as an SLP for Medicare billing purposes. Practices that were billing correctly last year may now be out of compliance — and OIG has added SLP billing to its active audit priority list.</p>
+    <p>Evaluation code upcoding, missing KX modifier documentation, and telehealth visit documentation gaps are the top three audit triggers right now. One denied claim can cascade into a full-practice review.</p>
+    <p style="color: var(--navy); font-weight: 600;">SLPBillingClarity monitors these changes monthly so you can adjust before you're flagged.</p>
+  </div>
+  <div class="split-image">
+    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80" alt="Healthcare professional reviewing Medicare billing compliance documentation at desk" />
+  </div>
+</section>
+
+<!-- SPLIT 2 — WHAT'S COVERED -->
+<section class="split">
+  <div class="split-image">
+    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=900&q=80" alt="Medical billing paperwork and insurance claim forms on desk" />
+  </div>
+  <div class="split-content" style="background: var(--navy); color: var(--white);">
+    <p class="section-label" style="color: var(--gold);">What You Get</p>
+    <h2 style="color: var(--white);">A monthly compliance briefing — written for SLPs, not coders.</h2>
+    <p style="color: rgba(255,255,255,0.72);">Each report is tailored to your specific practice — your state, your payers, your CPT codes. No generic newsletters. No 40-page PDFs. Just the regulatory changes, enforcement signals, and documentation updates that affect your billing this month.</p>
+    <p style="color: rgba(255,255,255,0.72);">Think of it as a compliance-aware colleague who reads the Federal Register, OIG Work Plan, and MAC bulletins so you don't have to.</p>
+  </div>
+</section>
+
+<!-- COVERAGE GRID -->
+<section class="coverage">
+  <p class="section-label">Monthly Report Coverage</p>
+  <h2>Six areas. Every month. Tailored to your practice.</h2>
+  <div class="coverage-grid">
+    <div class="coverage-card">
+      <div class="coverage-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8A020" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+      </div>
+      <h3>CPT Code Updates</h3>
+      <p>Changes to 92507, 92508, 92521–92524, 96105, 96125, 92610, 92611 — reimbursement rate shifts, new documentation requirements, and code retirement alerts.</p>
+    </div>
+    <div class="coverage-card">
+      <div class="coverage-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8A020" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>OIG & MAC Audit Alerts</h3>
+      <p>Active enforcement priorities affecting SLP billing — which codes are being flagged, which states are seeing audits, and what documentation gaps are triggering reviews.</p>
+    </div>
+    <div class="coverage-card">
+      <div class="coverage-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8A020" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <h3>Modifier Compliance</h3>
+      <p>-GN modifier requirements, KX modifier documentation thresholds, NCCI edit pairs, and modifier stacking rules that affect your claims.</p>
+    </div>
+    <div class="coverage-card">
+      <div class="coverage-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8A020" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Telehealth Billing Rules</h3>
+      <p>Post-2025 telehealth coverage for SLP services — place of service codes, documentation requirements, modifier 95/GT usage, and state-by-state Medicaid telehealth rules.</p>
+    </div>
+    <div class="coverage-card">
+      <div class="coverage-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8A020" stroke-width="2" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      </div>
+      <h3>Therapy Cap & Exceptions</h3>
+      <p>Therapy cap thresholds, automatic exception processes, KX modifier documentation requirements, and targeted medical review triggers for SLP services.</p>
+    </div>
+    <div class="coverage-card">
+      <div class="coverage-icon">
+        <svg width="22" height="22" fill="none" stroke="#E8A020" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Carrier-Specific Alerts</h3>
+      <p>Payer-by-payer coverage changes for Medicare, Medicare Advantage, Medicaid, UnitedHealth, Aetna, Cigna, BCBS, and Tricare — prior auth updates, fee schedule changes, and denial trend alerts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CPT CODE TABLE -->
+<section class="cpt-section">
+  <p class="section-label">CPT Codes We Monitor</p>
+  <h2>The codes that drive your revenue — and your audit risk.</h2>
+  <p>Every report covers the CPT codes most relevant to independent SLP practices, flagged by current audit risk level based on OIG Work Plan priorities and MAC enforcement data.</p>
+  <div class="cpt-grid">
+    <div class="cpt-card">
+      <div class="cpt-code">92521</div>
+      <div class="cpt-desc">Evaluation of speech fluency</div>
+      <span class="cpt-risk risk-high">High Audit Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">92522</div>
+      <div class="cpt-desc">Evaluation of speech production</div>
+      <span class="cpt-risk risk-high">High Audit Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">92523</div>
+      <div class="cpt-desc">Speech & language comprehension evaluation</div>
+      <span class="cpt-risk risk-high">High Audit Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">92524</div>
+      <div class="cpt-desc">Behavioral and qualitative voice analysis</div>
+      <span class="cpt-risk risk-elevated">Elevated Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">92507</div>
+      <div class="cpt-desc">Speech/language treatment — individual</div>
+      <span class="cpt-risk risk-moderate">Moderate Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">92508</div>
+      <div class="cpt-desc">Speech/language treatment — group (2+ patients)</div>
+      <span class="cpt-risk risk-elevated">Elevated Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">96105</div>
+      <div class="cpt-desc">Standardized cognitive performance testing</div>
+      <span class="cpt-risk risk-elevated">Elevated Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">96125</div>
+      <div class="cpt-desc">Standardized cognitive performance testing by clinician</div>
+      <span class="cpt-risk risk-moderate">Moderate Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">92610</div>
+      <div class="cpt-desc">Evaluation of oral & pharyngeal swallowing</div>
+      <span class="cpt-risk risk-elevated">Elevated Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">92611</div>
+      <div class="cpt-desc">Fluoroscopic swallowing study (MBSS/FEES)</div>
+      <span class="cpt-risk risk-moderate">Moderate Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">-GN</div>
+      <div class="cpt-desc">Modifier: Services delivered by SLP</div>
+      <span class="cpt-risk risk-high">High Audit Risk</span>
+    </div>
+    <div class="cpt-card">
+      <div class="cpt-code">KX</div>
+      <div class="cpt-desc">Modifier: Medical necessity certification</div>
+      <span class="cpt-risk risk-high">High Audit Risk</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <p class="section-label">How It Works</p>
+  <h2>Four steps. Five minutes. Full compliance visibility.</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Subscribe</h3>
+      <p>Select your plan and complete checkout. No contracts, cancel anytime through your billing portal.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Tell Us About Your Practice</h3>
+      <p>Complete a short intake form — your state, practice size, payers, and specialty areas (dysphagia, pediatric, AAC, etc.).</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Get Your First Report</h3>
+      <p>Within 24 hours, your personalized compliance intelligence report arrives in your inbox — tailored to your practice profile.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Stay Current Monthly</h3>
+      <p>On the 1st of every month, an updated report lands with new enforcement signals, code changes, and payer updates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CARRIERS -->
+<section class="carriers">
+  <p class="section-label">Payers We Track</p>
+  <div class="carrier-pills">
+    <span class="carrier-pill gold">Medicare Part B</span>
+    <span class="carrier-pill gold">Medicare Advantage</span>
+    <span class="carrier-pill gold">Medicaid</span>
+    <span class="carrier-pill">UnitedHealth / Optum</span>
+    <span class="carrier-pill">Aetna</span>
+    <span class="carrier-pill">Cigna / Evernorth</span>
+    <span class="carrier-pill">BCBS</span>
+    <span class="carrier-pill">Tricare</span>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <p class="section-label">Pricing</p>
+  <h2>One plan. Everything you need.</h2>
+  <div class="price-card">
+    <div class="price-amount">$197<span>/month</span></div>
+    <p class="price-desc">Comprehensive Medicare billing compliance intelligence — personalized to your SLP practice.</p>
+    <ul class="price-features">
+      <li>Monthly compliance intelligence report</li>
+      <li>CPT code update alerts (92507–92524, 96105, 96125, 92610, 92611)</li>
+      <li>-GN and KX modifier compliance tracking</li>
+      <li>OIG Work Plan and MAC audit monitoring</li>
+      <li>Telehealth billing rule updates</li>
+      <li>Therapy cap exception tracking</li>
+      <li>Carrier-specific coverage change alerts</li>
+      <li>Dysphagia and AAC billing updates</li>
+      <li>NCCI edit pair monitoring for SLP codes</li>
+    </ul>
+    <a href="STRIPE_LINK_HERE" class="price-cta">Start Your Subscription →</a>
+    <p style="margin-top:14px; font-size:13px; color:var(--text-muted);">Cancel anytime · No contracts · First report within 24 hours</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-label">What SLPs Are Saying</p>
+  <h2>Built for independent practices like yours.</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <blockquote>"I had no idea CMS had changed the qualified SLP definition until my first report flagged it. I would have been billing incorrectly for months. This service pays for itself with one avoided audit."</blockquote>
+      <cite>SLP Practice Owner<br/><span>Solo Practice · Georgia</span></cite>
+    </div>
+    <div class="testimonial">
+      <blockquote>"The KX modifier documentation section alone is worth the subscription. I was missing threshold documentation on nearly every claim and didn't know it. My denial rate has dropped significantly since I started getting these reports."</blockquote>
+      <cite>CCC-SLP<br/><span>2-Clinician Practice · Ohio</span></cite>
+    </div>
+    <div class="testimonial">
+      <blockquote>"As a pediatric SLP billing both Medicare and Medicaid, the payer-specific breakdowns save me hours of research every month. I finally feel like I'm not guessing on modifier stacking."</blockquote>
+      <cite>Pediatric SLP<br/><span>Solo Practice · Texas</span></cite>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <p class="section-label">Frequently Asked Questions</p>
+  <h2>Common questions from SLPs.</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Is this legal advice or billing advice?</div>
+      <div class="faq-a"><p>No. SLPBillingClarity provides general compliance intelligence for educational purposes only. We are not attorneys, not certified professional coders, and not a substitute for qualified healthcare compliance counsel. Our reports summarize publicly available regulatory information to help you stay informed — they do not constitute legal advice or billing advice. Always consult a qualified healthcare attorney or CPC for decisions specific to your practice.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What makes this different from reading CMS updates myself?</div>
+      <div class="faq-a"><p>CMS, OIG, and MAC bulletins are spread across dozens of sources, published in regulatory language, and rarely organized by specialty. SLPBillingClarity monitors all of these sources, filters for SLP-relevant changes, and delivers a plain-English summary tailored to your specific payers and state — on the 1st of every month.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I share any patient data?</div>
+      <div class="faq-a"><p>No. We never ask for or receive any patient information, protected health information (PHI), or clinical records. Your intake form only captures your practice profile — your name, state, practice type, and payer mix. No HIPAA exposure.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How quickly do I get my first report?</div>
+      <div class="faq-a"><p>Within 24 hours of completing your intake form. Your first report is generated based on your practice profile and current regulatory landscape. Monthly reports arrive on the 1st of every month after that.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I cancel anytime?</div>
+      <div class="faq-a"><p>Yes. No contracts, no cancellation fees. You can manage or cancel your subscription anytime through the Stripe billing portal link included in every report email. Cancellation takes effect at the end of your current billing period.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this a billing company or a compliance consulting firm?</div>
+      <div class="faq-a"><p>Neither. SLPBillingClarity is a compliance intelligence service — we monitor regulatory changes and deliver summarized, practice-specific updates for educational purposes. We don't file claims, conduct audits, or provide compliance consulting. We provide the information; you and your compliance team decide how to act on it.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">I'm an SLP assistant (SLPA) — is this relevant to me?</div>
+      <div class="faq-a"><p>SLPBillingClarity is built for licensed, ASHA-certified SLPs (CCC-SLP) who bill Medicare and Medicaid directly. If you're an SLPA working under supervision, the billing decisions are typically made by the supervising SLP — but understanding the compliance landscape can still help you document more effectively.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Your next audit letter doesn't come with a warning.</h2>
+  <p>SLPBillingClarity monitors OIG Work Plan updates, MAC audit activity, and enforcement trends for SLP billing every month — so you can adjust before you're selected for review.</p>
+  <a href="STRIPE_LINK_HERE">Start Your Subscription — $197/mo →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 SLPBillingClarity.com · A Digital Services USA property</p>
+  <p>This report is general compliance intelligence for educational purposes only. It is not legal advice, not billing advice, and not a substitute for a qualified healthcare attorney or certified professional coder.</p>
+  <p>Questions? <a href="mailto:hello@slpbillingclarity.com">hello@slpbillingclarity.com</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
