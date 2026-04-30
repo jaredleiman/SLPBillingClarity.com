@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>92507 CPT Code: How AI Downcoding Is Quietly Reducing SLP Reimbursement | SLPBillingClarity</title>
+<meta name="description" content="Insurers are using AI to downcode 92507 individual speech therapy claims to 92508 group treatment, and reclassify 92523 evaluations to lower-paying codes. Here's how to detect and respond.">
+<meta name="keywords" content="92507 cpt code, 92508, 92523, SLP downcoding, AI downcoding, speech therapy billing, speech language pathology reimbursement">
+<link rel="canonical" href="https://slpbillingclarity.com/blog/ai-downcoding-92507/">
+
+<meta property="og:title" content="92507 CPT Code: How AI Downcoding Is Quietly Reducing SLP Reimbursement">
+<meta property="og:description" content="Insurers are using AI to downcode 92507 individual treatment to 92508 group, and reclassify 92523 evaluations. Here's how to detect and respond.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://slpbillingclarity.com/blog/ai-downcoding-92507/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is CPT code 92507?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CPT 92507 is treatment of speech, language, voice, communication, and/or auditory processing disorder — individual. It's the primary CPT code for individual SLP treatment sessions and is billed as an untimed session-based code (one unit per session regardless of length). 92508 is the group treatment equivalent (two or more individuals), which reimburses at a substantially lower rate per patient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are insurers downcoding SLP claims with AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Major commercial payers and Medicaid managed care plans have deployed AI claim-review systems that target SLP claims through three main mechanisms: reclassifying 92507 individual treatment as 92508 group treatment when documentation references any group context, downcoding 92523 evaluation of speech sound production and language to 92521 or 92522 (single-domain evaluations) when documentation doesn't clearly span both domains, and applying frequency caps below medical necessity. The American Academy of Family Physicians has called for a federal investigation into AI downcoding practices in 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between 92521, 92522, 92523, and 92524?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "92521 evaluates speech fluency. 92522 evaluates speech sound production. 92523 evaluates speech sound production AND language (combined evaluation, higher reimbursement). 92524 evaluates voice and resonance. 92523 pays substantially more than 92521 or 92522 individually because it covers two evaluation domains. AI tools sometimes downcode 92523 to 92522 when documentation doesn't clearly establish both speech sound and language assessment occurred."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I document 92507 to defend against AI downcoding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Documentation for 92507 must clearly identify the session as individual treatment (one therapist, one patient, no group component), the specific impairment areas addressed, the techniques used, and the patient's response to treatment. Avoid language that describes peer interaction, group dynamics, or co-treatment unless those activities are clinically intentional and documented as part of an individual session. Note any caregivers present in an observational capacity, distinct from co-treatment."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-deep: #050d1a;
+    --navy-card: #0f1d33;
+    --tomato: #e07b5e;
+    --tomato-bright: #f59478;
+    --cream: #f5efe6;
+    --text-primary: #f5efe6;
+    --text-secondary: #b8c4d6;
+    --text-muted: #7a8699;
+    --border: rgba(224, 123, 94, 0.15);
+    --border-strong: rgba(224, 123, 94, 0.35);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', 'Cambria', serif;
+    background: var(--navy);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  .nav {
+    border-bottom: 1px solid var(--border);
+    background: var(--navy-deep);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    font-family: 'Georgia', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .brand em {
+    color: var(--tomato);
+    font-style: italic;
+  }
+
+  .nav-cta {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.875rem;
+    color: var(--tomato);
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-cta:hover {
+    background: var(--tomato);
+    color: var(--navy);
+  }
+
+  .article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .eyebrow {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--tomato);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-family: 'Georgia', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .meta {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tldr {
+    background: linear-gradient(135deg, rgba(224, 123, 94, 0.08), rgba(224, 123, 94, 0.03));
+    border: 1px solid var(--border-strong);
+    border-left: 4px solid var(--tomato);
+    padding: 1.75rem 2rem;
+    margin: 2rem 0 3rem;
+    border-radius: 4px;
+  }
+
+  .tldr-label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--tomato);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .tldr p {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--cream);
+    margin: 3rem 0 1.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--tomato-bright);
+    margin: 2rem 0 1rem;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+    color: var(--text-secondary);
+  }
+
+  p strong {
+    color: var(--cream);
+    font-weight: 600;
+  }
+
+  ul, ol {
+    margin: 1.25rem 0 1.5rem 1.5rem;
+    color: var(--text-secondary);
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+  }
+
+  .callout {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 4px;
+  }
+
+  .callout-label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--tomato);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .comparison-table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.95rem;
+  }
+
+  .comparison-table th {
+    background: var(--navy-deep);
+    color: var(--tomato);
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .comparison-table td {
+    padding: 0.875rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .comparison-table td:first-child {
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--tomato);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+  }
+
+  .cta-block {
+    background: linear-gradient(135deg, var(--navy-card), var(--navy-deep));
+    border: 1px solid var(--border-strong);
+    padding: 2.5rem;
+    margin: 4rem 0 2rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .cta-block h3 {
+    color: var(--cream);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+  }
+
+  .cta-block p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--tomato);
+    color: var(--navy);
+    padding: 0.875rem 2rem;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+  }
+
+  .cta-button:hover {
+    background: var(--tomato-bright);
+    transform: translateY(-1px);
+  }
+
+  .related {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .related h4 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--tomato);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .related a {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-strong);
+    transition: all 0.2s;
+  }
+
+  .related a:hover {
+    color: var(--tomato);
+    border-bottom-color: var(--tomato);
+  }
+
+  .footer {
+    background: var(--navy-deep);
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .footer p {
+    color: var(--text-muted);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+  }
+
+  .footer a {
+    color: var(--tomato);
+    text-decoration: none;
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+  }
+
+  @media (max-width: 768px) {
+    .article { padding: 3rem 1.5rem; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    .tldr, .callout, .cta-block { padding: 1.5rem; }
+    .comparison-table { font-size: 0.85rem; }
+    .comparison-table th, .comparison-table td { padding: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">SLP Billing <em>Clarity</em></a>
+    <a href="/#pricing" class="nav-cta">Subscribe</a>
+  </div>
+</nav>
+
+<article class="article">
+
+  <div class="eyebrow">Billing Intelligence · April 2026</div>
+
+  <h1>92507 CPT Code: How AI Downcoding Is Quietly Reducing SLP Reimbursement</h1>
+
+  <div class="meta">10 min read · For independent SLPs and speech therapy practice owners</div>
+
+  <div class="tldr">
+    <div class="tldr-label">Quick Answer</div>
+    <p>Insurers are using AI claim-review systems to silently downcode SLP claims through three main mechanisms: reclassifying 92507 individual treatment as 92508 group treatment (a 50-60% reimbursement cut per session) when documentation references any group context, downcoding 92523 evaluation of speech sound production and language to 92521 or 92522 single-domain evaluations, and applying frequency caps below documented medical necessity. The claim isn't denied — it's paid at a lower amount, with no notice. The American Academy of Family Physicians called for a federal investigation in 2026, and several state legislatures introduced AI downcoding transparency bills. Independent SLPs can respond by auditing remittance data for CPT mismatches and unit reductions, restructuring documentation to clearly establish individual vs group context and dual-domain evaluation, and submitting batch appeals when systematic patterns emerge.</p>
+  </div>
+
+  <p>You see a 6-year-old patient for a 45-minute individual articulation therapy session. You target /r/ in single words progressing to short phrases, document the percentage accuracy, note the cuing hierarchy you used, and record the home practice plan you sent with the parent. You bill 92507 — individual treatment of speech disorder, the standard SLP code — at a single session unit.</p>
+
+  <p>Three weeks later, the EOB shows the claim was paid. You move on. But when your billing team reconciles the line, they see the 92507 was reclassified to 92508 group treatment — paid at roughly 50% of the 92507 rate. About $40-60 less than expected, depending on the contract. No denial. No documentation request. Just a quiet reclassification.</p>
+
+  <p>Or worse: you bill 92523 for a comprehensive evaluation that covered both speech sound production and language — and the payer pays it as 92522 (speech sound only) at roughly 60% of the 92523 rate, because the AI didn't find clear language-domain assessment language in the report.</p>
+
+  <p>This is AI downcoding in speech-language pathology, and in 2026 it became one of the most consistent silent revenue leaks in independent SLP practices.</p>
+
+  <h2>The SLP CPT code family</h2>
+
+  <p>Most SLP billing involves a small core of codes split across treatment and evaluation:</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>CPT Code</th>
+        <th>Service</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>92507</td>
+        <td>Treatment of speech/language/voice/communication disorder, individual</td>
+        <td>Untimed, session-based</td>
+      </tr>
+      <tr>
+        <td>92508</td>
+        <td>Treatment, group of two or more individuals</td>
+        <td>Untimed, per patient in group</td>
+      </tr>
+      <tr>
+        <td>92521</td>
+        <td>Evaluation of speech fluency</td>
+        <td>Single-domain evaluation</td>
+      </tr>
+      <tr>
+        <td>92522</td>
+        <td>Evaluation of speech sound production</td>
+        <td>Single-domain evaluation</td>
+      </tr>
+      <tr>
+        <td>92523</td>
+        <td>Evaluation of speech sound production with language</td>
+        <td>Combined evaluation, highest paying</td>
+      </tr>
+      <tr>
+        <td>92524</td>
+        <td>Behavioral and qualitative analysis of voice and resonance</td>
+        <td>Voice-specific evaluation</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>AI downcoding patterns target predictable shifts: <strong>92507 → 92508</strong> (treatment reclassification, biggest per-claim impact) and <strong>92523 → 92522</strong> (evaluation reclassification, biggest per-eval impact). Both reductions occur silently and require billed-vs-paid CPT comparison to detect.</p>
+
+  <h2>Why SLP is hit harder than most specialties</h2>
+
+  <p>Three structural factors make speech-language pathology an unusually frequent AI downcoding target.</p>
+
+  <p><strong>92507 is untimed, which makes documentation interpretation more decisive.</strong> Unlike PT or ABA, where time per code drives the unit count, SLP individual treatment is one session = one unit regardless of length. The only thing that distinguishes 92507 from 92508 is whether the session was individual or group — and that distinction lives entirely in narrative content. AI tools that detect any group-context language (peer interaction, social skills group, paired practice) can downcode the claim to 92508 even when the actual session was individual.</p>
+
+  <p><strong>The 92523 vs 92522 distinction depends on dual-domain documentation.</strong> 92523 requires both speech sound production AND language assessment. If the evaluation report has detailed articulation/phonology assessment but limited explicit language testing documentation, AI tools downcode to 92522 (speech sound only). The dollar impact per evaluation is significant — frequently $80-150 per downcoded eval.</p>
+
+  <p><strong>Pediatric and school-based SLPs are especially exposed.</strong> School-based SLPs often work in mixed contexts (some individual, some small group, some classroom-based) which creates documentation patterns AI tools struggle to parse. Caseload-based billing models common in pediatrics also create higher claim volumes per patient, which amplifies any per-claim downcoding pattern.</p>
+
+  <div class="callout">
+    <div class="callout-label">The Pattern in Plain Numbers</div>
+    <p>A solo SLP seeing 30 individual sessions per week, billing 92507 for each, faces meaningful exposure if even 10% of those sessions get reclassified to 92508. At ~$50 per reclassified session, that's <strong>$150 per week, or roughly $7,500 per year</strong> in revenue earned but never received from treatment alone. Add 2-3 evaluation downcodes per month (92523→92522) at ~$120 each, and total annual exposure approaches $11,000-12,000. Practices doing higher evaluation volume face proportionally larger losses.</p>
+  </div>
+
+  <h2>How to detect AI downcoding in your own practice</h2>
+
+  <p>The data lives in your ERAs. You need three comparisons: CPT submitted vs CPT paid (line by line), units billed vs units paid, and rate paid vs contracted rate.</p>
+
+  <h3>The 30-minute audit</h3>
+
+  <ol>
+    <li>Pull your last 90 days of paid claims from MA plans, commercial payers, and Medicaid managed care plans, separated by payer. Most SLP-friendly EHRs (Fusion Web Clinic, ClinicSource, TheraNest, SimplePractice) export this as a CSV.</li>
+    <li>Filter to SLP CPT lines (92507, 92508, 92521, 92522, 92523, 92524). Compare submitted CPT to paid CPT.</li>
+    <li>Count lines where billed CPT ≠ paid CPT. Specifically watch for 92507 paid as 92508 and 92523 paid as 92522 or 92521.</li>
+    <li>Group results by payer. Often one or two Medicaid MCOs or commercial plans drive most of the loss while others pay clean.</li>
+  </ol>
+
+  <p>Run this for your top commercial payers, all Medicaid managed care plans, and any TRICARE coverage. The dollar impact per identified pattern is meaningful — a single corrected interpretation across a high-volume payer can recover $100-300 per week going forward.</p>
+
+  <h2>How to document 92507 to defend against AI downcoding</h2>
+
+  <p>The fastest documentation upgrade most SLP practices can make: <strong>structure session notes to clearly establish the individual context</strong>, with explicit identification that the session was 1:1 with no group component.</p>
+
+  <p>Instead of:</p>
+
+  <blockquote>"Patient worked on /r/ in words and short phrases. Practiced with peer in waiting room before session. Tolerated session well."</blockquote>
+
+  <p>Write:</p>
+
+  <blockquote>"<strong>Service: Individual 92507 session, 1:1 with SLP, 45 minutes.</strong> No co-treatment or group activity during session. <strong>Targets:</strong> Initial /r/ at word level (drill format, 50 trials, 78% accuracy with verbal/visual cuing) progressing to phrase level (25 trials, 64% accuracy). <strong>Cuing hierarchy:</strong> Visual placement cues faded to verbal models faded to independent production by mid-session. <strong>Carryover plan:</strong> Home practice list provided to parent (10 word-level, 5 phrase-level), parent demonstrated correct cuing technique before discharge. <strong>Caregiver presence:</strong> Parent observed final 10 minutes for carryover training; parent not part of co-treatment."</blockquote>
+
+  <p>This isn't substantially longer. It explicitly establishes the individual context, documents the absence of group elements, and clarifies parent presence as observational rather than co-treatment. AI claim reviewers do exactly enough natural language processing to detect group-context language — give them clear individual-context language and 92507 sticks.</p>
+
+  <p>For evaluations, the equivalent upgrade is structuring the report with <strong>explicit section headers for both speech sound production AND language</strong>, with separate assessment data, separate standard scores when used, and separate clinical impressions for each domain. This protects 92523 against downgrade to 92522.</p>
+
+  <h2>How to appeal a downcoded SLP claim</h2>
+
+  <p>Most payers have a 60-180 day appeal window. Three things make appeals win:</p>
+
+  <ul>
+    <li><strong>Documentation that explicitly establishes individual vs group context</strong> (for 92507) or <strong>dual-domain assessment</strong> (for 92523). If the note already does this, the appeal is straightforward. If not, the appeal is much weaker.</li>
+    <li><strong>Reference to the payer's published medical policy.</strong> Most major commercial payers and Medicaid MCOs publish SLP coverage policies. Quote them. Make the payer prove their AI followed policy.</li>
+    <li><strong>Pattern documentation in the cover letter.</strong> "Our practice has identified [N] downcoded 92507 claims from [Payer] over the past [period], totaling $[amount] in unrecovered revenue."</li>
+  </ul>
+
+  <p>Single-claim appeals rarely justify the time investment for $40-60 individual reductions. <strong>Batch appeals</strong> — submitting 30+ downcoded claims at once with a systematic-pattern cover letter — carry meaningful leverage because they signal regulatory complaint risk. ASHA and state SLP association advocacy has accelerated payer responsiveness to systematic-pattern complaints throughout 2026.</p>
+
+  <h2>What's coming in 2026</h2>
+
+  <p>The legislative response is moving but unevenly. Several state bills proposed in 2026 would require payers to disclose AI involvement in claim adjudication; others would create a private right of action for systematic downcoding. None have become law yet. What's more likely in the next 6-12 months:</p>
+
+  <ul>
+    <li><strong>State Medicaid program scrutiny.</strong> SLP services for pediatric Medicaid populations have high state-level oversight, and AI downcoding by Medicaid MCOs is exactly the kind of pattern state oversight bodies investigate.</li>
+    <li><strong>ASHA and state association advocacy.</strong> Trade associations have signaled increasing attention to AI claim review practices.</li>
+    <li><strong>Class action litigation.</strong> Multiple cases were filed against major commercial payers in 2025-2026 by SLP practice groups and billing companies.</li>
+    <li><strong>Quiet payer policy revisions.</strong> AI thresholds get retuned without announcement when pressure builds. The only reliable detection is monitoring your remittance patterns over time.</li>
+  </ul>
+
+  <p>None of this helps a practice getting downcoded today. What helps today is detection, documentation upgrades on individual context and dual-domain evaluation, and batch appeals on systematic patterns.</p>
+
+  <h2>The bigger picture</h2>
+
+  <p>AI downcoding by payers sits in a larger pattern that hit independent SLP practices in 2026: payers using automation to extract margin without changing the contract or the regulation. It's the mirror image of AI upcoding stories at large hospital-affiliated rehab departments. Same technology, opposite direction of force. Independent SLPs sit in the middle — without the AI tools that large systems use to push codes up, but absorbing the AI tools commercial and Medicaid payers use to push codes down. The only available defense is regular monitoring of your own remittance data — claim-by-claim, payer-by-payer.</p>
+
+  <p>The practices that catch this in 2026 are the ones treating ERA data as something to read, not just file.</p>
+
+  <div class="cta-block">
+    <h3>Monthly compliance intelligence for independent SLPs</h3>
+    <p>State Medicaid policy changes, commercial payer SLP coverage updates, OIG enforcement priorities, downcoding patterns, and one prioritized action item — delivered to your inbox on the 1st of every month. Less than the cost of a single downcoded evaluation.</p>
+    <a href="/#pricing" class="cta-button">See Pricing →</a>
+  </div>
+
+  <div class="related">
+    <h4>Related Reading</h4>
+    <p>
+      <a href="/blog/ai-upcoding-slp-billing/">How AI is changing SLP billing audits — the upcoding side of the story</a><br>
+      <a href="/blog/92523-vs-92522-evaluation-coding/">92523 vs 92522: when to bill the combined evaluation</a><br>
+      <a href="/blog/medicaid-slp-frequency-caps/">Medicaid managed care SLP frequency caps: how to challenge below-medical-necessity limits</a>
+    </p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p><a href="/">SLPBillingClarity</a> · Monthly billing intelligence for independent speech-language pathologists</p>
+  <p class="disclaimer">This content provides educational information about billing rules, payer policies, and regulatory enforcement. It is not legal, billing, or coding advice. For specific claim disputes, consult a qualified healthcare attorney or certified medical biller.</p>
+</footer>
+
+</body>
+</html>
